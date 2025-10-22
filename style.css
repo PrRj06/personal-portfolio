@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap');
+
+/* h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+} */
+
+:root {
+    --bg-color: white;
+    --text-color: black;
+    --primary-color: black; 
+    --border-color: black;
+}   
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    color: var(--text-color);
+    background: var(--bg-color);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    /* padding:; */
+}
+
+.hero-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.hero-text{
+    flex: 0 1 600px;
+}
+.hero-title{
+    font-size: 28px;
+    font-weight: 700;
+}
+.hero-subtitle{
+    font-size: 30px;
+    font-weight: 1000;
+    margin: 15px 0;
+    background: linear-gradient(135deg, #F97316, #EF4444, #EC4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.hero-text .hero-description{
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+.resume{
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--text-color);
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-color);
+    background: linear-gradient(135deg, #F97316, #EF4444, #EC4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.resume svg {
+    display: none;
+}
+.resume::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #F97316, #EF4444, #EC4899);
+    mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 20L18 20' stroke='black' stroke-width='1.8' fill='none'/%3E%3Cpath d='M12 4V16M12 16L15.5 12.5M12 16L8.5 12.5' stroke='black' stroke-width='1.8' fill='none'/%3E%3C/svg%3E");
+    mask-size: contain;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 20L18 20' stroke='black' stroke-width='1.8' fill='none'/%3E%3Cpath d='M12 4V16M12 16L15.5 12.5M12 16L8.5 12.5' stroke='black' stroke-width='1.8' fill='none'/%3E%3C/svg%3E");
+    -webkit-mask-size: contain; 
+}
+
+.hero-image{
+    flex: 0 1 350px;
+    aspect-ratio: 1/1;
+    background-image: url(/assests/Sasuke\ Pfp.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.15);
+}
+.hero-image::before{
+    content: '';
+    position: absolute;
+    padding: 4px;
+    inset: 0;
+    border-radius: 20px;
+    background: linear-gradient(135deg,  #F97316, #EF4444, #EC4899);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+.hero-image:hover::before{
+    opacity: 1;
+}
+/**! -------------------------------------------------- */
