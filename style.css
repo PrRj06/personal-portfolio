@@ -5,10 +5,11 @@
 } */
 
 :root {
-    --bg-color: white;
+    --bg-color: #ffffff;
     --text-color: black;
     --primary-color: black; 
     --border-color: black;
+    --shadow-color: rgba(0, 0, 0, 0.2);
 }   
 * {
     margin: 0;
@@ -70,11 +71,11 @@ body {
     outline: none;
     border-radius: 10px;
     padding: 0.5rem 1rem;
-    border: 1px solid var(--border-color);
     background: linear-gradient(135deg, #F97316, #EF4444, #EC4899);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 .resume svg {
     display: none;
@@ -100,7 +101,7 @@ body {
     border-radius: 20px;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.15 );
 }
 .hero-image::before{
     content: '';
@@ -126,3 +127,81 @@ body {
     opacity: 1;
 }
 /**! -------------------------------------------------- */
+
+/* nav-bar styles */
+.nav-bar {
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 20px;
+
+    /* Glassmorphism effect */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+
+    z-index: 1000;
+    color: black;    /* default icon color */
+}
+
+/* Links inside nav-bar */
+.nav-bar a {
+    color: inherit;
+}
+
+/* Circle icon wrappers */
+.nav-bar > *:not(:last-child) {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1); /* optional circle bg */
+}
+
+/* Theme toggle container */
+.nav-bar .theme {
+    width: 40px;
+    height: 40px;
+    margin: 0 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255,255,255,0.1); /* optional */
+}
+
+/* Toggle light/dark icons */
+.nav-bar .theme > * {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.nav-bar .theme .dark {
+    display: none;
+}
+
+/* Hover effect */
+.nav-bar > div:hover {
+    margin: 0 16px;
+    background: rgba(22, 22, 22, 0.2); /* glassy hover */
+    transform: scale(1.5);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+/**! ------------------------------------------------------------ */
