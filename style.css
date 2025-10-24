@@ -94,7 +94,7 @@ body {
 .hero-image{
     flex: 0 1 350px;
     aspect-ratio: 1/1;
-    background-image: url(/assests/sample-profile-pic.jpg);
+    background-image: url(./assets/sample-profile-pic.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
